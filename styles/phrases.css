@@ -1,0 +1,83 @@
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto/Roboto-Regular.ttf") format("truetype");
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.image {
+  width: 500px;
+  border: solid 5px black;
+  border-radius: 20px;
+  display: flex;
+  filter: drop-shadow(.2vmin .2vmin .2vmin rgba(0, 0, 0, .7));
+}
+
+.nav-arrow {
+  width: 60px;
+  opacity: .8;
+  filter: drop-shadow(.2vmin .2vmin .2vmin rgba(0, 0, 0, .7));
+}
+
+.nav-arrow:hover {
+  opacity: 1;
+}
+
+.jpn-phrase {
+  font-family: "Roboto";
+  font-size:calc(25px + 1vw);
+}
+
+.eng-phrase {
+  font-family: "Roboto";
+  font-size:calc(25px + 1vw);
+}
+
+.hidden {
+  color: rgba(0, 0, 0, 0);
+  border-bottom: solid 5px black;
+}
+
+.controls {
+  margin: 20px;
+  display: flex;
+  border: solid 2px black;
+  border-radius: 10px;
+}
+
+.control-button {
+ padding: 15px;
+ font-family: "Roboto", Arial, Helvetica, sans-serif;
+ font-size:calc(16px + .4vw);
+ color: black;
+
+}
+
+.control-button:hover {
+  text-decoration: underline;
+}
+
+.disabled {
+  color: rgba(0, 0, 0, .3);
+}

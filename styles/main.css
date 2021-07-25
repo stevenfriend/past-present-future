@@ -1,0 +1,154 @@
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto/Roboto-Regular.ttf") format("truetype");
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+.container {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  margin: auto;
+  width: 60vw;
+  min-width: 400px;
+  max-width: 800px;
+}
+
+section {
+  margin-bottom: 80px;
+  /* background-color: lightcyan; */
+  border-radius: 10px;
+}
+
+h1 {
+  margin: 40px;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  font-size:calc(30px + 1vw);
+  text-align: center;
+}
+
+h3 {
+  margin: 40px 0 10px 0;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  font-size:calc(15px + 1vw);
+}
+
+p {
+  margin: 0;
+  text-align: justify;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  font-size:calc(16px + .4vw);
+}
+
+p.center {
+  text-align: center;
+  font-size:calc(18px + .4vw);
+}
+
+table {
+  margin: 0 auto 30px auto;
+  width: 40vw;
+  min-width: 400px;
+  border-collapse: collapse;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  font-size:calc(20px + .8vw);
+  text-align: center;
+}
+
+table, th, td {
+  border: 3px solid black;
+}
+
+.menu-button {
+  margin: 10px;
+  padding: 10px;
+  width: 40vw;
+  min-width: 400px;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  font-size:calc(15px + 1vw);
+}
+
+.not-allowed {
+  cursor:not-allowed;
+}
+
+/* The switch - the box around the slider */
+.switch {
+  position: absolute;
+  display: inline-block;
+  margin: 10px;
+  width: 60px;
+  height: 34px;
+  top: 0;
+  right: 0;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.hidden-japanese {
+  display: none;
+}
