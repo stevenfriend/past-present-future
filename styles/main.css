@@ -27,7 +27,6 @@ main {
 
 section {
   margin-bottom: 80px;
-  /* background-color: lightcyan; */
   border-radius: 10px;
 }
 
@@ -54,6 +53,19 @@ p {
 p.center {
   text-align: center;
   font-size:calc(18px + .4vw);
+}
+
+p.indent {
+  margin-left: 1vw;
+  font-size:calc(16px + .4vw);
+}
+
+.diagram {
+  display: block;
+  margin: 5px auto 0 auto;
+  width: 60%;
+  min-width: 400px;
+  filter: drop-shadow(.2vmin .2vmin .2vmin rgba(0, 0, 0, .5));
 }
 
 table {

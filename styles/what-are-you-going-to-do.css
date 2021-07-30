@@ -65,7 +65,7 @@ header {
   height: 50px;
   background: rgb(0, 128, 0);
   color: white;
-  font-size:calc(30px + 1vw);
+  font-size:calc(20px + 1vw);
   font-family: "Roboto", sans-serif;
   border-radius: 1vmin;
   filter: drop-shadow(.2vmin .2vmin .1vmin rgba(0, 0, 0, .7));
@@ -114,7 +114,7 @@ header {
   display: grid;
   gap: 10px;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-template-areas: ". . . . . . . sign" ;
+  grid-template-areas: ". sign . . . . . ." ;
   z-index: 2;
 }
 

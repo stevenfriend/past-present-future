@@ -1,0 +1,222 @@
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto/Roboto-Regular.ttf") format("truetype");
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+h1 {
+  margin: 40px;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  font-size:calc(30px + 1vw);
+  text-align: center;
+}
+
+header {
+  position:fixed;
+  top:0;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+  padding: 10px;
+}
+
+.controls {
+  display: flex;
+}
+
+#refresh:hover {
+  transform: rotate(-90deg);
+  opacity: 1;
+}
+
+#score-container {
+  display: flex;
+  align-items: center;
+}
+
+#score-label{
+  font-family: "Roboto", sans-serif;
+  font-size:calc(30px + 1vw);
+  margin-right: 10px;
+}
+
+#refresh {
+  width: 60px;
+  margin: 0 10px;
+  opacity: .7;
+  filter: drop-shadow(.2vmin .2vmin .1vmin rgba(0, 0, 0, .7));
+  transition: all ease-out .3s;
+}
+
+#start {
+  justify-self: center;
+  align-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 50px;
+  background: rgb(0, 128, 0);
+  color: white;
+  font-size:calc(20px + 1vw);
+  font-family: "Roboto", sans-serif;
+  border-radius: 1vmin;
+  filter: drop-shadow(.2vmin .2vmin .1vmin rgba(0, 0, 0, .7));
+  transition: background-color .2s;
+}
+
+#start:hover {
+  background-color: rgb(21, 197, 21);
+}
+
+#timer {
+  font-family: "Roboto", sans-serif;
+  font-size: 7vmin;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.player {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: 
+    "today" 
+    "week";
+  width: 80vw;
+}
+
+.player-label {
+  text-align: center;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  font-size: 10vw;
+  color: white;
+  position: relative;
+  filter: drop-shadow(.2vmin .2vmin .2vmin rgba(0, 0, 0, .7));
+}
+
+.today {
+  grid-area: today;
+  padding: 0 3vw;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas: ". . . . sign . . ." ;
+  z-index: 2;
+}
+
+.sign {
+  grid-area: sign;
+  padding: 0 1vw;
+  width: 80%;
+  filter: drop-shadow(.2vmin .2vmin .1vmin rgba(0, 0, 0, .7));
+  transform: translateY(20%);
+  
+}
+
+.week {
+  padding: 0 3vw;
+  border-radius: 50vh;
+  grid-area: week;
+  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  filter: drop-shadow(.2vmin .2vmin .2vmin rgba(0, 0, 0, .7));
+  gap: 10px;
+  z-index: 1;
+}
+
+.weekA {
+  background-color: red;
+}
+
+.weekB {
+  background-color: rgb(0, 123, 255);
+}
+
+.day {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  transition: ease-in .2s;
+  border-radius: 1vw;
+  overflow: hidden;
+  filter: drop-shadow(.3vmin .3vmin .3vmin rgba(0, 0, 0, 0.5));
+}
+
+.day-label {
+  padding: 5px;
+  width: 100%;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  font-size: 1.4vw;
+  text-align: center;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.image {
+  width: 100%;
+}
+
+#score {
+  font-family: "Roboto", sans-serif;
+  font-size: 7vmin;
+}
+
+.feedback {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80vmin;
+  transform: translate(-50%, -50%);
+  filter: drop-shadow(.3vmin .3vmin .3vmin rgba(0, 0, 0, .7));
+  /* opacity: 0; */
+  transform: translate(-50%, -50%) scale(0);
+  z-index: 10;
+}
+
+.feedback-animation {
+  animation: grow-shrink 1s ease-in-out backwards;
+  min-width: 600px;
+}
+
+#circle {
+  fill: none;
+  stroke: #00A14B;
+  stroke-width: 10;
+  stroke-miterlimit: 10;
+}
+
+@keyframes grow-shrink{
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+  }
+  30% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  70% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+  }
+}
