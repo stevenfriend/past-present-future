@@ -99,18 +99,8 @@ header {
   width: 80vw;
 }
 
-.today {
-  grid-area: today;
-  padding: 0 3vw;
-  display: grid;
-  gap: 10px;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-template-areas: ". . . . . . . sign" ;
-  z-index: 2;
-}
-
 .week {
-  padding: 2vw 3vw 2vw 1vw;
+  padding: 2vw 3vw 2vw 2vw;
   border-radius: 50vh;
   grid-area: week;
   align-items: center;
