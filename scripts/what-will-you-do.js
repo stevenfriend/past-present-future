@@ -13,8 +13,10 @@ const timer = {
 let bagB;
 let imagesB;
 let ended = false;
+let tickCrossArray = [];
 
 getQuestions();
+pickThree();
 
 function getQuestions() {
   bagB = fillBag();
@@ -22,9 +24,9 @@ function getQuestions() {
   fillWeek(weekB, bagB, imagesB);
 }
 
-addDayEvents(weekB, playerB.querySelector('.sign'));
+addDayEvents(weekB);
 
-function addDayEvents(week, sign) {
+function addDayEvents(week) {
   for (let day of week) {
     addDayAnimation(day);
   }
@@ -96,7 +98,7 @@ function getImages() {
   for (let i=0; i<20; i++) {
     const image = new Image();
     image.src = `./images/${i}.jpg`;
-    image.className = 'image';
+    image.className = 'activity-image';
     array.push(image);
   }
   return array;
@@ -105,10 +107,21 @@ function getImages() {
 function fillWeek(week, bag, images) {
   for (let i=0; i<7; i++) {
     const pick = Math.floor(Math.random() * bag.length);
-    if (week[i].querySelector('img')) {
-      week[i].replaceChild(images[bag[pick]], week[i].querySelector('img'));
+    week[i].querySelector('.day-label').classList.toggle('tick');
+    if (week[i].querySelector('.tick-cross')) {
+      const tickCross = document.createElement('img');
+      tickCross.src = 'images/cross.svg';
+      tickCross.className = 'tick-cross';
+      week[i].querySelector('.tick-cross').replaceWith(tickCross);
+    };
+    if (week[i].querySelector('.activity-image')) {
+      week[i].replaceChild(images[bag[pick]], week[i].querySelector('.activity-image'));
     };
     week[i].appendChild(images[bag[pick]]);
     bag.splice(pick, 1);
   }
+}
+
+function pickThree() {
+  console.log(Math.ceil(Math.random()*7));
 }
