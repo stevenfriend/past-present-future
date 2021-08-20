@@ -109,7 +109,7 @@ header {
   grid-area: week;
   align-items: center;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   filter: drop-shadow(.2vmin .2vmin .2vmin rgba(0, 0, 0, .7));
   gap: 10px;
   z-index: 1;

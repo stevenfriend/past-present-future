@@ -14,11 +14,12 @@ let bagB;
 let imagesB;
 let ended = false;
 let tickCrossArray = [];
+let pick = [];
 
 getQuestions();
-pickThree();
 
 function getQuestions() {
+  pick = [];
   bagB = fillBag();
   imagesB = getImages();
   fillWeek(weekB, bagB, imagesB);
@@ -105,23 +106,36 @@ function getImages() {
 }
 
 function fillWeek(week, bag, images) {
-  for (let i=0; i<7; i++) {
-    const pick = Math.floor(Math.random() * bag.length);
+  pickThree();
+  for (let i=0; i<6; i++) {
+    const randomNumber = Math.floor(Math.random() * bag.length);
     week[i].querySelector('.day-label').classList.toggle('tick');
     if (week[i].querySelector('.tick-cross')) {
       const tickCross = document.createElement('img');
-      tickCross.src = 'images/cross.svg';
-      tickCross.className = 'tick-cross';
+      if (pick.includes(i)) {
+        tickCross.src = 'images/tick.svg';
+        tickCross.className = 'tick-cross tick';
+        week[i].querySelector('.day-label').className = 'day-label tick';
+      } else {
+        tickCross.src = 'images/cross.svg';
+        tickCross.className = 'tick-cross cross';
+        week[i].querySelector('.day-label').className = 'day-label cross';
+      }
       week[i].querySelector('.tick-cross').replaceWith(tickCross);
     };
     if (week[i].querySelector('.activity-image')) {
-      week[i].replaceChild(images[bag[pick]], week[i].querySelector('.activity-image'));
+      week[i].replaceChild(images[bag[randomNumber]], week[i].querySelector('.activity-image'));
     };
-    week[i].appendChild(images[bag[pick]]);
-    bag.splice(pick, 1);
+    week[i].appendChild(images[bag[randomNumber]]);
+    bag.splice(randomNumber, 1);
   }
 }
 
 function pickThree() {
-  console.log(Math.ceil(Math.random()*7));
+  while (pick.length < 3) {
+    let randomNumber = Math.floor(Math.random()*7);
+    if (!pick.includes(randomNumber)) {
+      pick.push(randomNumber);
+    }
+  }
 }
