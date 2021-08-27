@@ -9,17 +9,28 @@
     <div class="container">
       <h1>Past, Present & Future Tense</h1>
       <button onclick="window.location.href='./instructions.html';" class="menu-button">Instructions</button>
-      <button onclick="window.location.href='./present-table.html';" class="menu-button">Simple Present Tense: Table</button>
-      <button onclick="window.location.href='./present-phrases.html';" class="menu-button">Simple Present Tense: Phrases</button>
-      <button onclick="window.location.href='./past-regular.html';" class="menu-button">Simple Past Tense: Regular Verbs</button>
-      <button onclick="window.location.href='./past-irregular.html';" class="menu-button">Simple Past Tense: Irregular Verbs</button>
-      <button onclick="window.location.href='./past-phrases.html';" class="menu-button">Simple Past Tense: Phrases</button>
-      <button onclick="window.location.href='./what-did-you-do.html';" class="menu-button">What did you do?</button>
-      <button onclick="window.location.href='./future-tense.html';" class="menu-button">Simple Future Tense</button>
-      <button onclick="window.location.href='./what-are-you-going-to-do.html';" class="menu-button">What are you going to do?</button>
-      <button onclick="window.location.href='./past-and-future.html';" class="menu-button">Past and Future</button>
-      <button onclick="window.location.href='./what-will-you-do.html';" class="menu-button">What will you do?</button>
+      <div class="tenses">
+        <button id="present-button" class="tense-button">Present Tense</button>
+        <button id="past-button" class="tense-button">Past Tense</button>
+        <button id="future-button" class="tense-button">Future Tense</button>
+      </div>
+      <div class="present activities hidden">
+        <button onclick="window.location.href='./present-table.html';" class="menu-button present-activity">Simple Present Tense: Table</button>
+        <button onclick="window.location.href='./present-phrases.html';" class="menu-button  present-activity">Simple Present Tense: Phrases</button>
+      </div>
+      <div class="past activities hidden">
+        <button onclick="window.location.href='./past-regular.html';" class="menu-button past-activity">Simple Past Tense: Regular Verbs</button>
+        <button onclick="window.location.href='./past-irregular.html';" class="menu-button past-activity">Simple Past Tense: Irregular Verbs</button>
+        <button onclick="window.location.href='./past-phrases.html';" class="menu-button past-activity">Simple Past Tense: Phrases</button>
+        <button onclick="window.location.href='./what-did-you-do.html';" class="menu-button past-activity">What did you do?</button>
+      </div>
+      <div class="future activities hidden">
+        <button onclick="window.location.href='./future-tense.html';" class="menu-button future-activity">Simple Future Tense</button>
+        <button onclick="window.location.href='./what-are-you-going-to-do.html';" class="menu-button future-activity">What are you going to do?</button>
+        <button onclick="window.location.href='./past-and-future.html';" class="menu-button future-activity">Past and Future</button>
+        <button onclick="window.location.href='./what-will-you-do.html';" class="menu-button future-activity">What will you do?</button>
+      </div>
     </div>
-    <!-- <script src="scripts/index.js"></script> -->
+    <script src="scripts/index.js"></script>
   </body>
 </html>

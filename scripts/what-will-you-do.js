@@ -133,7 +133,7 @@ function fillWeek(week, bag, images) {
 
 function pickThree() {
   while (pick.length < 3) {
-    let randomNumber = Math.floor(Math.random()*7);
+    let randomNumber = Math.floor(Math.random()*6);
     if (!pick.includes(randomNumber)) {
       pick.push(randomNumber);
     }
