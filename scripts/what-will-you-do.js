@@ -1,14 +1,8 @@
 'strict'
 
 const refresh = document.getElementById('refresh');
-const start = document.getElementById('start');
-const circle = document.getElementById('circle');
 const playerB = document.querySelector('.player-B');
 const weekB = document.querySelectorAll('div.day');
-const timer = { 
-  element: document.getElementById('timer'),
-  total: 61 * 1000
-};
 
 let bagB;
 let imagesB;
@@ -51,40 +45,6 @@ function addDayAnimation(day) {
 refresh.addEventListener('click', () => {
   getQuestions();
 });
-
-start.addEventListener('click', () => {
-  requestAnimationFrame(initializeTimer);
-  start.innerHTML = 'RESET'
-});
-
-function initializeTimer(now) {
-  timer.initial = now;
-  timer.s = 1000;
-  timer.m = timer.s * 60;
-  requestAnimationFrame(runTimer);
-}
-
-function runTimer(now) {
-  const options = {minimumIntegerDigits: 2, useGrouping: false};
-  const runtime = now - timer.initial;
-  const remaining = timer.total - runtime;
-  if(remaining < 0) timesUp();
-  else {
-    const minutes = Math.floor(remaining/timer.m).toLocaleString('en-US', options);
-    const seconds = Math.floor((remaining%timer.m)/timer.s).toLocaleString('en-US', options);
-    const display = `${minutes}:${seconds}`
-    if(timer.display !== display) {
-      timer.element.innerText = display;
-      timer.display = display;
-    }
-    if(!ended) requestAnimationFrame(runTimer);
-  }
-}
-
-function timesUp() { 
-  ended = true;
-  start.innerHTML = 'START';
-}
 
 function fillBag() {
   const array = [];
