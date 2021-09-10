@@ -47,9 +47,9 @@ function enableToggle() {
 	const verb = document.querySelector('.verb');
 	const phrase = document.querySelector('.phrase');
 	if (state.hideVerb) {
-		verb.classList.toggle('hidden');
+		verb.classList.toggle('hidden-text');
 	} else if (state.hidePhrase) {
-		phrase.classList.toggle('hidden');
+		phrase.classList.toggle('hidden-text');
 	}
 }
 
@@ -123,23 +123,23 @@ function hideText() {
 	const verb = document.querySelector('.verb').classList;
 	const phrase = document.querySelector('.phrase').classList;
 	if (state.hideVerb) {
-		if (!verb.contains('hidden')) {
-			verb.add('hidden');
+		if (!verb.contains('hidden-text')) {
+			verb.add('hidden-text');
 		};
-		if (phrase.contains('hidden')) {
-			phrase.remove('hidden');
+		if (phrase.contains('hidden-text')) {
+			phrase.remove('hidden-text');
 		};
 	} else {
-		verb.remove('hidden');
+		verb.remove('hidden-text');
 	}
 	if (state.hidePhrase) {
-		if (!phrase.contains('hidden')) {
-			phrase.add('hidden');
+		if (!phrase.contains('hidden-text')) {
+			phrase.add('hidden-text');
 		};
-		if (verb.contains('hidden')) {
-			verb.remove('hidden');
+		if (verb.contains('hidden-text')) {
+			verb.remove('hhidden-text');
 		};
 	} else {
-		phrase.remove('hidden');
+		phrase.remove('hidden-text');
 	}
 }
